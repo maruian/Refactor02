@@ -15,29 +15,32 @@ public class Refactor02 {
 		float resultado=0;
 
 		//Calculamos la media geométrica para el primer jugador
-		for(int i=0;i<jugador1.length;i++)
-		{
-			resultado=resultado+jugador1[i];
-		}
-		resultado=resultado/jugador1.length;
-		System.out.println("La media de goles del jugador 1 es: "+resultado);
-		resultado=0;
+		resultado = media(jugador1);
+		mensrslt("La media de goles del jugador 1 es:",resultado);
+		
 		//Calculamos la media geométrica para el segundo jugador
-		for(int i=0;i<jugador2.length;i++)
-		{
-			resultado=resultado+jugador2[i];
-		}
-		resultado=resultado/jugador2.length;
-		System.out.println("La media de goles del jugador 2 es: "+resultado);
-		resultado=0;
+		resultado = media(jugador2);
+		mensrslt("La media de goles del jugador 2 es:",resultado);
+		
 		//Calculamos la media geométrica para el tercer jugador
-		for(int i=0;i<jugador3.length;i++)
-		{
-			resultado=resultado+jugador3[i];
-		}
-		resultado=resultado/jugador3.length;
-		System.out.println("La media de goles del jugador 3 es: "+resultado);
-		resultado=0;
+		resultado = media(jugador3);
+		mensrslt("La media de goles del jugador 3 es:",resultado);	
 	}
-
+	public static float media(int[] jugador){
+		float media=0;
+		for(int i=0;i<jugador.length;i++)
+		{
+			media=media+jugador[i];
+		}
+		media=media/jugador.length;
+		return media;
+	}
+	
+	public static void mensrslt(String msg, float resultado){
+		System.out.println(msg+" "+resultado);	
+		resultado = 0;
+	}
+	
 }
+
+
